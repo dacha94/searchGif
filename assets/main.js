@@ -14,6 +14,7 @@ function searchGif() {
     let gifSearch = document.getElementById("gifSearch").value;
 
 
+try {
     fetch('https://api.giphy.com/v1/gifs/search?api_key=YE5Q5b8pJlSFjrfT1KcSWaEQy8KsAdIj&q=' + gifSearch + '&limit=5&offset=0&rating=g&lang=en')
     .then(response => response.json())
     .then(gif => {
@@ -24,6 +25,8 @@ function searchGif() {
         `<img src="${gif.data[3].images.fixed_width.url}" alt="${gifSearch}" class="img"></img>`+
         `<img src="${gif.data[4].images.fixed_width.url}" alt="${gifSearch}" class="img"></img>`
     })
-    .catch(error =>console.log(error));
-
-}
+} catch(err) {
+    // catch(error =>console.log(error));
+    // console.log(err);
+    alert(`Возникла ошибка!`); 
+}}
