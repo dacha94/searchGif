@@ -28,5 +28,5 @@ try {
 } catch(err) {
     // catch(error =>console.log(error));
     // console.log(err);
-    alert(`Возникла ошибка!`); 
+    alert(`Возникла ошибка сервера`); 
 }}
